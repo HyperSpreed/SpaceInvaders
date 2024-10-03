@@ -1,6 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://couew0e1wvaoi"]
+[gd_scene load_steps=5 format=3 uid="uid://d1eindl5ccm7e"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_vky3k"]
+[ext_resource type="Texture2D" uid="uid://brat5wkactj1m" path="res://Assets/BackGroundSpaceInvaders.png" id="2_x0det"]
+[ext_resource type="PackedScene" uid="uid://de40gty04s8gu" path="res://Scenes/player.tscn" id="3_df1kt"]
+[ext_resource type="PackedScene" uid="uid://cj4x2xrks8cpb" path="res://Scenes/area_enemy_1.tscn" id="3_vrhc5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6h8qd"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_vky3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 465)
+scale = Vector2(3.5, 4)
+texture = ExtResource("2_x0det")
+
+[node name="Player" parent="." instance=ExtResource("3_df1kt")]
+position = Vector2(320, 880)
+scale = Vector2(2.25, 2.25)
+
+[node name="Walls" type="StaticBody2D" parent="." groups=["Walls"]]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls"]
+scale = Vector2(1, 100)
+shape = SubResource("SegmentShape2D_6h8qd")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(640, 0)
+scale = Vector2(1, 100)
+shape = SubResource("SegmentShape2D_6h8qd")
+
+[node name="EnemyGroupNode" type="Node" parent="." groups=["Enemys"]]
+
+[node name="AreaEnemy1" parent="EnemyGroupNode" groups=["Enemys"] instance=ExtResource("3_vrhc5")]
+position = Vector2(322, 721)

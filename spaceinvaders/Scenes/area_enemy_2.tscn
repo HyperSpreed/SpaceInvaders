@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c24mtna0hcp0g"]
+
+[ext_resource type="Texture2D" uid="uid://dlum0s44veab5" path="res://Assets/Enemy2.png" id="1_etyn7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6namr"]
+radius = 16.0312
+
+[node name="AreaEnemy2" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_etyn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6namr")
