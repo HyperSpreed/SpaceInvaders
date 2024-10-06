@@ -1,12 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1eindl5ccm7e"]
 
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_hkdqp"]
 [ext_resource type="Texture2D" uid="uid://brat5wkactj1m" path="res://Assets/BackGroundSpaceInvaders.png" id="2_x0det"]
 [ext_resource type="PackedScene" uid="uid://de40gty04s8gu" path="res://Scenes/player.tscn" id="3_df1kt"]
-[ext_resource type="PackedScene" uid="uid://cj4x2xrks8cpb" path="res://Scenes/area_enemy_1.tscn" id="3_vrhc5"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6h8qd"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_hkdqp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(320, 465)
@@ -27,8 +28,3 @@ shape = SubResource("SegmentShape2D_6h8qd")
 position = Vector2(640, 0)
 scale = Vector2(1, 100)
 shape = SubResource("SegmentShape2D_6h8qd")
-
-[node name="EnemyGroupNode" type="Node" parent="." groups=["Enemys"]]
-
-[node name="AreaEnemy1" parent="EnemyGroupNode" groups=["Enemys"] instance=ExtResource("3_vrhc5")]
-position = Vector2(322, 721)
