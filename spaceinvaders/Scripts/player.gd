@@ -5,6 +5,14 @@ var canShoot = true
 var shootCooldown = 0.5
 var time_since_last_shoot = 0.0
 @onready var bullet_scene = preload("res://Scenes/bullet.tscn")
+var hp = 3
+
+func loseHp():
+	if hp <= 1:
+		queue_free()
+	elif hp>0:
+		hp -= 1
+		print(hp)
 
 func _process(delta):
 	if not canShoot:

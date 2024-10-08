@@ -1,9 +1,21 @@
 extends Area2D
 
-var speed = 400
+@export var speed = -250
 
-func _physics_process(delta):
-	position.y -= speed*delta
-	if position.y<0:
+func start(pos):
+	position = pos
+
+func _process(delta):
+	position.y += speed * delta
+
+func _on_area_entered(area):
+	if area.is_in_group("enemy"):
+		area.explode()
 		queue_free()
-	
+	if area.is_in_group("Bullets"):
+		area.disappearBullet()
+		queue_free()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
