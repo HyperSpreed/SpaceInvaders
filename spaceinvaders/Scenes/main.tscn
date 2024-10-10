@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1eindl5ccm7e"]
+[gd_scene load_steps=6 format=3 uid="uid://d1eindl5ccm7e"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_hkdqp"]
 [ext_resource type="Texture2D" uid="uid://brat5wkactj1m" path="res://Assets/BackGroundSpaceInvaders.png" id="2_x0det"]
 [ext_resource type="PackedScene" uid="uid://de40gty04s8gu" path="res://Scenes/player.tscn" id="3_df1kt"]
+[ext_resource type="FontFile" uid="uid://bldbet6pylejp" path="res://Assets/PixelOperator8-Bold.ttf" id="4_5lbg1"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_6h8qd"]
 
@@ -28,3 +29,21 @@ shape = SubResource("SegmentShape2D_6h8qd")
 position = Vector2(640, 0)
 scale = Vector2(1, 100)
 shape = SubResource("SegmentShape2D_6h8qd")
+
+[node name="HpLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 50)
+offset_right = 10.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_5lbg1")
+text = "Lives: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 576.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("4_5lbg1")
+text = "000000"
+horizontal_alignment = 2
+vertical_alignment = 1

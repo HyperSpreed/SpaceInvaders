@@ -7,12 +7,18 @@ var time_since_last_shoot = 0.0
 @onready var bullet_scene = preload("res://Scenes/bullet.tscn")
 var hp = 3
 
+func _ready():
+	get_node("/root/Main/HpLabel").text = "Lives: " + str(hp)
+
 func loseHp():
 	if hp <= 1:
+		hp -= 1
 		queue_free()
+		get_node("/root/Main/HpLabel").text = "Lives: " + str(hp)
 	elif hp>0:
 		hp -= 1
 		print(hp)
+		get_node("/root/Main/HpLabel").text = "Lives: " + str(hp)
 
 func _process(delta):
 	if not canShoot:

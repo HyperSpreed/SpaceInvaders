@@ -9,10 +9,13 @@ var allEnemiesDown = false
 var score = 0
 var enemyIsAlive = true
 
-
 func _ready():
 	spawnEnemies()
 	moveEnemies()
+	scoreUpdater()
+
+func scoreUpdater():
+	get_node("/root/Main/ScoreLabel").text = "000000"
 
 func moveEnemies():
 	while allEnemiesDown == false:
