@@ -12,6 +12,9 @@ func _ready():
 		$ShootTimer.start()
 
 func explode():
+	var scoreEachEnemy = get_node("/root/Main")
+	scoreEachEnemy.score += value
+	get_node("/root/Main").updateScore()
 	#$AnimationPlayer.play("explode")      #USE THIS TO PLAY AN EXPLODING ANIMATION
 	set_deferred("monitorable",false)
 	died.emit(5)

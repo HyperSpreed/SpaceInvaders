@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgp0m1uhynyik"]
+
+[ext_resource type="Texture2D" uid="uid://dv6bmyom07glk" path="res://Assets/MotherShip.png" id="1_fo21q"]
+[ext_resource type="Script" path="res://Scripts/mother_ship.gd" id="1_jawtu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m7qb"]
+size = Vector2(64, 20)
+
+[node name="MotherShip" type="Area2D" groups=["spaceShip"]]
+script = ExtResource("1_jawtu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fo21q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_2m7qb")

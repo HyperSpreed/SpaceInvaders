@@ -25,6 +25,7 @@ window/size/viewport_height=960
 enemy=""
 Player=""
 Bullets=""
+spaceShip=""
 
 [input]
 
